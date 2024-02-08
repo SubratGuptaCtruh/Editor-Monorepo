@@ -1,0 +1,23 @@
+.shimmerContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+.shimmerContainer span {
+    height: 100%;
+}
+.shimmerCard {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+.shimmerRoundImage {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.75rem;
+}
+.shimmerText {
+    height: 20px;
+    flex-grow: 1;
+}

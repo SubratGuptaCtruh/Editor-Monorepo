@@ -1,0 +1,82 @@
+diff --git a/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoader.js b/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoader.js
+index a1036d2..cf9ef4c 100644
+--- a/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoader.js
++++ b/node_modules/@babylonjs/loaders/glTF/2.0/glTFLoader.js
+@@ -42,6 +42,30 @@ function mergeDeep(...objects) {
+         return prev;
+     }, {});
+ }
++const getImgExt = (data) => {
++    const header = data.subarray(0, 2);
++    const webpHeaderRIFFChars = data.subarray(0, 4);
++    const webpHeaderWEBPChars = data.subarray(8, 12);
++    const extensionLookup = new Map([
++        [[0x42, 0x4d].toString(), "bmp"],
++        [[0x47, 0x49].toString(), "gif"],
++        [[0xff, 0xd8].toString(), "jpg"],
++        [[0x89, 0x50].toString(), "png"],
++        [[0xab, 0x4b].toString(), "ktx2"],
++        [[0x73, 0x42].toString(), "basis"],
++    ]);
++    const ext = extensionLookup.get([header[0], header[1]].toString());
++    if (ext) {
++        return ext;
++    } else if (
++        webpHeaderRIFFChars.every((value, index) => value === [0x52, 0x49, 0x46, 0x46][index]) &&
++        webpHeaderWEBPChars.every((value, index) => value === [0x57, 0x45, 0x42, 0x50][index])
++    ) {
++        return ".webp";
++    } else {
++        throw new Error("Image data does not have a valid header");
++    }
++};
+ /**
+  * Helper class for working with arrays when loading the glTF asset
+  */
+@@ -1812,6 +1836,7 @@ export class GLTFLoader {
+         const samplerData = this._loadSampler(`/samplers/${sampler.index}`, sampler);
+         const promises = new Array();
+         const deferred = new Deferred();
++
+         this._babylonScene._blockEntityCollection = !!this._assetContainer;
+         const textureCreationOptions = {
+             noMipmap: samplerData.noMipMaps,
+@@ -1838,7 +1863,37 @@ export class GLTFLoader {
+         promises.push(this.loadImageAsync(`/images/${image.index}`, image).then((data) => {
+             const name = image.uri || `${this._fileName}#image${image.index}`;
+             const dataUrl = `data:${this._uniqueRootUrl}${name}`;
+-            babylonTexture.updateURL(dataUrl, data);
++            const prefix=`https://ctruhblobstorage.blob.core.windows.net/editor/user-${Texture.costomData?.userID}/models/${Texture.costomData?.model_name}/split/`;
++            const urlName=image.name?image.name:`image${image.index}`
++            const imgExt=undefined
++            const urlExt=imgExt?getImgExt(data):"jpg"
++            const url=`${prefix}${urlName}.${urlExt}`
++            babylonTexture.prefix=prefix
++            console.log(image,"vdksbh")
++            if(Texture.costomData){
++                caches.open("texturs").then((cache)=>{
++                    const mimeType=image.mimeType||'image/jpeg'
++                    console.log(url,prefix,urlName,"csahdib")
++                    cache.put(
++                        new Request(url),          
++                        new Response(new Blob([data], { type: mimeType }), {
++                           status: 200, // Status code indicating success
++                           statusText: 'OK', // Status text
++                           headers: {
++                               'Content-Type': mimeType, // Adjust the content type based on your image format
++                               'Content-Length':data.length
++                           },
++                        })
++                    )
++                    const cacheUpdatedEvent = new CustomEvent('cacheUpdated', {
++                        detail: {
++                            url: url,
++                        }
++                    });
++                    window.dispatchEvent(cacheUpdatedEvent);
++                })
++            }
++            babylonTexture.updateURL(image.uri?dataUrl:`data:${url}`, data);
+         }));
+         babylonTexture.wrapU = samplerData.wrapU;
+         babylonTexture.wrapV = samplerData.wrapV;

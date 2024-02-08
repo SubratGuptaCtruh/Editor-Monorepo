@@ -1,0 +1,113 @@
+.container {
+    background: linear-gradient(111.34deg, #aea2db 0%, #a1c1d9 100%);
+    height: 100vh;
+}
+.container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 64px;
+    gap: 144px;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.leftPart > a {
+    pointer-events: all;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(247, 250, 252, 0.8);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(247, 250, 252, 0.33) 100%);
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    color: #323232;
+    text-transform: uppercase;
+}
+.leftPart a:active {
+    border-radius: var(--corner-radii-corner-medium, 12px);
+    background: linear-gradient(135deg, rgba(243, 246, 248, 0.25) 0%, rgba(247, 250, 252, 0.25) 100%);
+    box-shadow:
+        2px 2px 3px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 3px 0px rgba(252, 252, 252, 0.33) inset;
+    backdrop-filter: blur(16px);
+    color: rgba(50, 50, 50, 0.75);
+}
+.leftPart h1 {
+    /* H1 */
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 72px;
+    /* White */
+    color: #ffffff;
+}
+.leftPart p {
+    /* H4 */
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    /* White */
+    color: #ffffff;
+    margin-bottom: 34px;
+    margin-top: 32px;
+}
+.rightPart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image404 {
+    max-width: 500px;
+}
+
+/* ***********************Responsive*********************** */
+@media only screen and (max-width: 1024px) {
+    .container > div {
+        padding: 40px;
+        gap: 14px;
+    }
+    .image404 {
+        max-width: 450px;
+    }
+}
+@media only screen and (max-width: 912px) {
+    .container > div {
+        flex-direction: column-reverse;
+        padding: 30px 60px;
+        gap: 14px;
+    }
+    .image404 {
+        max-width: 400px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .container > div {
+        flex-direction: column-reverse;
+        padding: 30px 20px;
+        gap: 14px;
+    }
+    .image404 {
+        max-width: 250px;
+    }
+    .container {
+        height: 100vh;
+    }
+    .leftPart h1 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .leftPart p {
+        font-size: 22px;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,37 @@
+pipeline {
+    agent { label params.Environment }
+    stages {
+        stage('Checkout') {
+	 agent none
+            steps {
+                checkout scm
+            }
+        }
+
+        
+        stage('Install Dependencies and build') {
+    	agent {
+            docker {
+		reuseNode true
+                image 'node:18' // Use an appropriate Node.js version
+            }
+        }
+            steps {
+		sh 'echo $EnvVariables >./envfile'
+                sh 'echo $EnvVariables >./env'
+                sh 'npm install'
+                sh 'npm run build' // Modify as needed
+            }
+        }
+        
+	stage ('compress and deploy to remote' ) {
+	    steps {
+
+		sh 'sudo rm -rf /var/www/html/editor/*'
+      		sh 'sudo cp -r dist/* /var/www/html/editor/.'
+		sh 'sudo systemctl restart nginx'
+           }
+       }
+    }
+}
+

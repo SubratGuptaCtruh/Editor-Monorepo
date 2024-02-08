@@ -1,0 +1,152 @@
+.palettePreviewContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    height: 100%;
+}
+
+.paletteHeading {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.paletteHeading > div {
+    display: flex;
+}
+
+.paletteHeading > div:hover {
+    cursor: pointer;
+}
+
+.paletteHeading h5 {
+    color: #323232;
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 24px;
+    max-width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+}
+
+.paletteMainContainer {
+    display: flex;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.imageContainer {
+    width: 234px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.imageContainer .imageText {
+    color: #323232;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 18px;
+}
+
+.colorContainer {
+    display: grid;
+    gap: 5px;
+    height: 128px;
+    width: 216px;
+}
+
+.colorContainer3x2 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.colorContainer3x3 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.colorContainer4x3 {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.colorBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(247, 250, 252, 0.33);
+}
+
+.colorBox p {
+    font-size: 11px;
+    width: 100%;
+    font-family: Rubik;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.colorBox p::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    padding: 2px 0;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.colorBox:hover p {
+    display: flex;
+}
+
+.actionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectedText {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.selectedText svg {
+    fill: #3d75f3;
+}
+
+.selectedText h6 {
+    color: #3d75f3;
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 20px;
+}
+
+.actionBtns {
+    display: flex;
+    gap: 16px;
+}

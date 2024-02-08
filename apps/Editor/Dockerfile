@@ -1,0 +1,31 @@
+FROM node:alpine
+WORKDIR /app
+COPY package.json ./
+COPY package-lock.json ./
+COPY ./ ./
+RUN apk add --upgrade xdg-utils
+RUN npm -f i
+RUN npm -f install react-router-dom --save
+#stage-20.244.4.185
+#prod - 20.244.3.73
+#ENV VITE_THREE_JS_PUBLIC_API_BASE_URL "http://20.244.7.43:5173"
+#ENV VITE_DASHBOARD_URL "https://www.ctruh.org/dashboard"
+#ENV VITE_LOGIN_PAGE_URL "https://www.ctruh.org/login"
+#ENV VITE_HOME_PAGE_URL "https://www.ctruh.org/"
+#ENV VITE_IDENTITY_SERVICE_API_BASE_URL "http://20.244.3.73:4500"
+#ENV VITE_API_GATEWAY_BASE_URL "http://20.244.4.185:4800"
+#ENV VITE_SKETCHFAB_CLIENT_ID xMnL8RBFGisM9ZoZQAnhjXb1pSPuKJe1k3xYf7Qp
+#ENV VITE_SKETCHFAB_CLIENT_SECRET uZjQig8xQun1HCeL7dR6YyMyw1j4xQGui5rmglBe4gPnA3eOeW7OQx8wmui5FjUkNlM7YBRz7d8LHHeDNrYW9XGB21WyLgPlkAW2BnKsZf864EYiYUOVRPe0BZX4spsN
+#ENV VITE_ENCRYPTION_SECRET_KEY ctruh-encryption-key
+#ENV VITE_USER_SERVICE_API_KEY BU0g5ZmOZOMtRraIf2js8ACGUqnSRJWz
+#ENV VITE_FILE_SERVICE_API_KEY ZaqFpkz9l1BNlaH60HpmNqSE2xNhVagf
+#ENV VITE_SCENE_SERVICE_API_KEY 8hU3YTZeRAlUeWNFU74oNekKLiKdIjYb
+#ENV VITE_PROJECT_SERVICE_API_KEY 03oPtxdcEBC7Um02aNXjpKbWkG9mIE8d
+#ENV VITE_MESH_SERVICE_API_KEY G4l842lrJ760IQpFJmJg4nK4gMfn2h9C
+#ENV VITE_CONTENT_SERVICE_API_KEY fdY2QIXuomUcYTyl1UwuA8v92OEbnJlt
+#ENV VITE_API_GATEWAY_BASE_URL "https://ctruhgatewaystage.azurewebsites.net"
+#ENV VITE_SKETCHFAB_BASE_URL "https://api.sketchfab.com"
+#ENV VITE_SKETCHFAB_CLIENT_ID xMnL8RBFGisM9ZoZQAnhjXb1pSPuKJe1k3xYf7Qp
+#ENV VITE_AI_GATEWAY_BASE_URL "https://ctruhgatewaystage.azurewebsites.net/getaimodel"
+Expose 5181
+CMD ["npm", "run", "dev"]

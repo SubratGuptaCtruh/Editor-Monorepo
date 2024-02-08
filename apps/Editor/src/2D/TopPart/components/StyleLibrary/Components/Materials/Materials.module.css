@@ -1,0 +1,76 @@
+.sceneMainContainer {
+    padding: 1rem 0 0 0;
+    height: 100%;
+}
+.containerStopScroll {
+    padding: 1rem 0;
+    height: 100%;
+}
+.sceneButtons {
+    display: flex;
+    gap: 1rem;
+    text-wrap: nowrap;
+    overflow-x: scroll;
+    padding-bottom: 0.5rem;
+}
+
+.buttonInActive {
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: 1px solid rgba(247, 250, 252, 0.8);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(247, 250, 252, 0.33) 100%);
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}
+.buttonActive {
+    background: #3d75f3;
+    color: #fff;
+}
+
+.buttonInActive:hover {
+    color: #3d75f3;
+}
+.buttonActive:hover {
+    color: #fff;
+}
+
+.sceneButtons > div {
+    height: 34px;
+    border: 1px solid #000;
+    mix-blend-mode: overlay;
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+}
+
+.sceneContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px 4px;
+    height: 70%;
+    overflow-y: scroll;
+    margin-top: 12px;
+}
+
+.sceneContainer:hover {
+    cursor: pointer;
+}
+
+.noMaterialsDiv {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #323232;
+    text-align: center;
+    line-height: 1.5rem;
+}

@@ -1,0 +1,31 @@
+.modalSideBarHeadingActive {
+    padding: 20px;
+    width: 80%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #3d75f3;
+    border-left: 5px solid #3d75f3;
+    font-size: 18px;
+    border-radius: 0.5rem;
+    background: rgba(247, 250, 252, 0.33);
+    /* Recessed - Shallow */
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 2px 0px rgba(254, 254, 254, 0.25) inset;
+}
+
+.modalSideBarHeading {
+    padding: 20px;
+    width: 80%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    color: #323232;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.modalSideBarHeading:hover {
+    color: #3d75f3;
+}

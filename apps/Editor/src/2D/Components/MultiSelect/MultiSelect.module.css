@@ -1,0 +1,101 @@
+.dropdown {
+    position: relative;
+}
+
+.dropdown.open .dropdownMenu {
+    display: block;
+    z-index: 2;
+}
+
+.selectedOptions {
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(247, 250, 252, 0.33);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(247, 250, 252, 0.6) 100%);
+    box-shadow:
+        0px 0px 4px 0px rgba(254, 254, 254, 0.1),
+        2px 2px 4px 0px rgba(50, 50, 50, 0.1),
+        -1px -1px 4px 0px rgba(254, 254, 254, 0.05),
+        -2px -2px 6px 0px rgba(252, 252, 252, 0.33);
+    backdrop-filter: blur(8px);
+    color: #323232;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.selectedOptions > svg > path {
+    fill: #3d75f3;
+}
+.selectedOptions::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 10px;
+    height: 5px;
+    border-radius: 8px;
+    background-color: #323232;
+    top: 50%;
+    right: 0;
+    transform: translate(-90%, -50%);
+    transition: clip-path 330ms ease;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+}
+.dropdown.open .selectedOptions::after {
+    clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+}
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    width: 100%;
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.option {
+    border-bottom: 1px solid rgba(105, 122, 139, 0.25);
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+    backdrop-filter: blur(16px);
+    display: flex;
+}
+.option > label {
+    color: #697a8b;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    cursor: pointer;
+    flex: 1;
+    padding: 10px 12px 10px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.option > label > input {
+    width: 18px;
+    height: 18px;
+}
+.option:hover {
+    background: #f7fafc;
+    backdrop-filter: blur(0px);
+}
+
+/* .option:focus .option > label {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.54) 0%, rgba(247, 250, 252, 0.54) 100%);
+    backdrop-filter: blur(12px);
+    color: #3d75f3;
+} */

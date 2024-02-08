@@ -1,0 +1,49 @@
+.audioMainContainer {
+    height: 345px;
+    margin: 15px 0;
+    overflow-y: scroll;
+}
+
+.audioMainContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.mappedMusicContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding-bottom: 4px;
+    grid-template-rows: auto;
+    overflow: hidden;
+}
+
+.noAudioTemplatesDiv {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #323232;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.audioAction {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+@media (max-width: 1024px) {
+    .mappedMusicContainer {
+        grid-template-columns: 1fr;
+    }
+}

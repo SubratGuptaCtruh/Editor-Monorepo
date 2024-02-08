@@ -1,0 +1,42 @@
+name: Lint Check
+
+on:
+    pull_request:
+        branches:
+            - main
+            - "feature/**"
+            - "fix/**"
+            - "releases/**"
+            - "frontend/**"
+        types:
+            - opened
+            - synchronize
+            - reopened
+            - edited
+    push:
+        branches:
+            - main
+            - "feature/**"
+            - "fix/**"
+            - "releases/**"
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Run TSC
+              run: npm run lint:tsc
+
+            - name: Run ESLint
+              run: npm run lint:eslint

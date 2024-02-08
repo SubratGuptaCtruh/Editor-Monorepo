@@ -1,0 +1,133 @@
+.materialPreviewContainer {
+    padding: 0px 10px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    color: #323232;
+    justify-content: space-between;
+}
+.rightPart {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.rightPartContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.rightHeading {
+    display: flex;
+    flex-direction: row;
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: normal;
+    gap: 8px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: space-between;
+}
+.rightHeadingMain {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.bottomButton {
+    position: absolute;
+    bottom: 20px;
+    right: 120px;
+    background-color: rgba(247, 250, 252, 0.72);
+    box-shadow:
+        -2px -2px 4px 0px rgba(254, 254, 254, 0.2),
+        2px 2px 2px 0px rgba(34, 34, 34, 0.08),
+        0px 0px 4px 0px rgba(8, 35, 61, 0.05) inset;
+    border-radius: 12px;
+    padding: 12px 14px;
+    color: #000;
+    border: none;
+}
+.bottomRightButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #386bdd;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.leftPart {
+    display: flex;
+    width: 11.25rem;
+    height: 11.25rem;
+    padding: 0px 16px;
+    border-radius: 12px;
+    background: rgba(50, 50, 50, 0.02);
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 2px 0px rgba(254, 254, 254, 0.25) inset;
+    justify-content: center;
+    align-items: center;
+    color: #697a8b;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+}
+.mountain {
+    height: 6.25rem;
+    width: 6.25rem;
+    border-radius: 12px;
+}
+.materialImage {
+    height: 48px;
+    width: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.materialPreviewCanvasContainer {
+    width: 100%;
+    height: 100%;
+}
+.previewMaterialCanvas {
+    width: 100%;
+    height: 95%;
+    outline: none;
+    cursor: pointer;
+}
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.shapIcon,
+.shapIconActive {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(247, 250, 252, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(247, 250, 252, 0.3) 100%);
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.1);
+    cursor: pointer;
+}
+.shapIcon svg,
+.shapIconActive svg {
+    width: 20px;
+    height: 20px;
+    fill: #323232;
+}
+
+.shapIconActive {
+    background: #386bdd;
+}
+.shapIconActive svg {
+    fill: #fff;
+}

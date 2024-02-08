@@ -1,0 +1,58 @@
+.shimmerContainer {
+    height: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px 0 4px;
+}
+.shimmerContainer span {
+    height: 100%;
+}
+.shimmerCard {
+    height: 72px;
+    border-radius: 1rem;
+    background: rgba(247, 250, 252, 0.5);
+    box-shadow:
+        2px 2px 4px 0px rgba(50, 50, 50, 0.1),
+        -2px -2px 4px 0px rgba(252, 252, 252, 0.25);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.leftShimmer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+.shimmerImage {
+    width: 72px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.shimmerImage span {
+    border-radius: 1rem;
+}
+.shimmerInfo {
+    height: 100%;
+    padding-right: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    flex-grow: 1;
+}
+.rightShimmer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+.shimmerIcon {
+    padding: 8px;
+    height: 48px;
+    width: 48px;
+}

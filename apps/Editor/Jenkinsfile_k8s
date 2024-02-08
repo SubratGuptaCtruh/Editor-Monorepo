@@ -1,0 +1,67 @@
+pipeline {
+    environment {
+    registry = "ctruh.azurecr.io/frontend/editornewservice"
+    containername = "editornewservice"
+    http_port = "5181"
+    registryCredential = 'acrid'
+    dockerImage = ''
+    }
+
+    agent { label 'devops' }
+    stages {
+            stage('Cloning our Git') {
+                steps {
+                git branch: params.branch, url: 'git@github.com:Ctruhtech/Editor.git'
+                }
+            }
+	    stage('set Environment File') {
+                steps {
+			sh 'echo $EnvVariables >./envfile'
+			sh 'echo $remote_server >./hosts'
+                }
+            }
+            stage ('Image Prune') { 
+		steps {
+                	imagePrune(containername)
+                	echo "Image prune is complete"
+		}
+            }
+//            stage('Building Docker Image') {
+//                steps {
+//                    script {
+//                        sh "whoami"
+//                        dockerImage = docker.build(registry+":v1.$BUILD_NUMBER", "-f Dockerfile .")
+//                    }
+//                }
+//            }
+
+//            stage('upload Docker Image to Azure Container Registry') {
+//                steps {
+//                    script {
+//                        docker.withRegistry('https://ctruh.azurecr.io', registryCredential) {
+//                        dockerImage.push()
+//                        dockerImage.push('latest')
+//                        }
+//                    }
+//                }
+//            }
+        
+            stage('Deploy Container') {
+	    	steps {
+	    	  ansiblePlaybook credentialsId: 'kishore_new', disableHostKeyChecking: true, extras: '-e remote_user=kishore -e JOB_NAME=${JOB_NAME}', installation: 'Ansible', inventory: 'hosts', playbook: 'deploy_application.yml'
+		     }
+            }
+        }
+    }
+
+def imagePrune(containerName){
+    try {
+        sh "docker image prune -f"
+        sh "docker stop $containerName"
+    } catch(error){}
+}
+
+def runApp(containerName, httpPort){
+	sh "docker run -d --rm -p $httpPort:$httpPort --name $containerName --env-file ./envfile $registry:v1.$BUILD_NUMBER"
+	echo "Application started on port: ${httpPort} (http)"
+}

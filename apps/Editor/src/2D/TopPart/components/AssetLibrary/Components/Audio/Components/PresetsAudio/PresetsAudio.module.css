@@ -1,0 +1,93 @@
+.sceneButtons {
+    display: flex;
+    min-width: 610px;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 16px 0 8px;
+    padding-bottom: 0.5rem;
+    overflow-x: scroll;
+}
+
+.sceneButtons::-webkit-scrollbar {
+    display: none;
+}
+
+.sceneButton {
+    border-radius: 0.75rem;
+    border: 1px solid rgba(247, 250, 252, 0.8);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(247, 250, 252, 0.33) 100%);
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.sceneButton:hover {
+    color: #3d75f3;
+}
+
+.selectedSceneButton {
+    background: #3d75f3;
+    color: #fff;
+}
+
+.selectedSceneButton:hover {
+    color: #fff;
+}
+
+.sceneButtons > div {
+    height: 34px;
+    border: 1px solid #000;
+    mix-blend-mode: overlay;
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+}
+
+.audioMainContainer {
+    height: 275px;
+    overflow-y: scroll;
+}
+
+.audioMainContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.mappedMusicContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 4px;
+    grid-template-rows: auto;
+    overflow: hidden;
+}
+
+.audioAction {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.noAudioTemplatesDiv {
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #323232;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .mappedMusicContainer {
+        grid-template-columns: 1fr;
+    }
+}

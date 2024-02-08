@@ -1,0 +1,19 @@
+.otpgroup {
+    display: flex;
+    width: 100%;
+    max-width: 360px;
+    column-gap: 10px;
+}
+
+.otpinput {
+    border-radius: var(--corner-radii-corner-small, 8px);
+    background: rgba(247, 250, 252, 0.05);
+    border: none;
+    outline: none;
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.2) inset,
+        -1px -1px 2px 0px rgba(254, 254, 254, 0.4) inset,
+        1px 1px 2px 0px rgba(50, 50, 50, 0.1) inset,
+        -1px -1px 2px 0px rgba(254, 254, 254, 0.2) inset;
+    pointer-events: all;
+}

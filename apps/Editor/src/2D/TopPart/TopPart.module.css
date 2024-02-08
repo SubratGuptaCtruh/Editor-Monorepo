@@ -1,0 +1,155 @@
+.topPartMainContainer {
+    padding: 8px 0px;
+    backdrop-filter: blur(20px) saturate(100%);
+    -webkit-backdrop-filter: blur(20px) saturate(100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.67) 0%, rgba(247, 250, 252, 0.33) 100%);
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    pointer-events: all;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.verticalLine {
+    width: 4px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.33);
+    mix-blend-mode: overlay;
+    box-shadow: -1px -1px 2px 0px rgba(50, 50, 50, 0.15) inset;
+    filter: drop-shadow(1px 1px 2px rgba(34, 34, 34, 0.15));
+}
+.topPartMainContainer > div,
+.modeContainer,
+.modeAnimate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+}
+.modeContainer,
+.modeAnimate {
+    gap: 8px;
+    cursor: pointer;
+}
+.modeContainer > p,
+.modeAnimate > p {
+    color: #323232;
+    font-family: Rubik;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.leftSide,
+.rightSide,
+.modalActions,
+.rhsModalActions {
+    display: flex;
+    gap: 24px;
+}
+.activeAI {
+    background: #386bdd;
+    color: #f7fafc;
+}
+.modalActions,
+.rhsModalActions {
+    gap: 12px;
+    padding: 8px;
+    border-radius: 16px;
+    background: rgba(50, 50, 50, 0.01);
+    /* Recessed - Shallow */
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 2px 0px rgba(254, 254, 254, 0.25) inset;
+}
+.logo_mode {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: white;
+    box-shadow:
+        2px 2px 4px 0px #0f165233,
+        1px 1px 2px 0px #eef3ff40 inset;
+}
+.accountDropDownContainer {
+    position: relative;
+    cursor: pointer;
+}
+.profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.profileContainer > div {
+    background: lightgray 50% / cover no-repeat;
+    box-shadow:
+        1.1666667461395264px 1.1666667461395264px 4.6666669845581055px 0px rgba(182, 46, 96, 0.33),
+        -1.1666667461395264px -1.1666667461395264px 2.3333334922790527px 0px rgba(252, 217, 230, 0.5);
+}
+
+.modeAnimate {
+    animation: shake 0.5s;
+}
+.modeAnimate2 {
+    animation: shake 0.6s;
+}
+
+.menuMainContainer {
+    width: 200px;
+    height: 300px;
+    background-color: white;
+    position: absolute;
+    margin-top: 10px;
+    background: rgba(247, 250, 252, 0.67);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+}
+
+.dropDownMainContainer {
+    position: relative;
+}
+.AIComponent,
+.customClassName {
+    margin-top: 7px;
+}
+.SearchAIComponent {
+    margin-left: 70px;
+}
+.activeAIButton {
+    border: 1px solid #76a0ff;
+    background: var(--Blue-Gradient, linear-gradient(97deg, #457cf8 0%, #386bdd 100%));
+    box-shadow: 0px 2px 2px 0px rgba(15, 60, 161, 0.2);
+    padding: 8px;
+    width: 44px;
+    height: 44px;
+    pointer-events: all;
+    cursor: pointer;
+    border-radius: 12px;
+    position: relative;
+}
+.activeAIButton > svg > path {
+    fill: #f7fafc;
+    width: 24px;
+    height: 24px;
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(12px);
+    }
+
+    50% {
+        transform: translateX(-12px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

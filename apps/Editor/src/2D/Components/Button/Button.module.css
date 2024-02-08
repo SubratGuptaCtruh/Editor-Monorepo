@@ -1,0 +1,105 @@
+.primaryRegular,
+.primarySM {
+    padding: 16px;
+    color: #fff;
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-transform: uppercase;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #457cf8 0%, #386bdd 100%);
+    box-shadow: 0px 2px 2px 0px rgba(15, 60, 161, 0.2);
+    border: none;
+    cursor: pointer;
+}
+.secondaryRegular,
+.secondarySM {
+    padding: 16px;
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+    box-shadow:
+        -2px -2px 4px 0px rgba(254, 254, 254, 0.2),
+        2px 2px 2px 0px rgba(34, 34, 34, 0.08),
+        0px 0px 4px 0px rgba(8, 35, 61, 0.05) inset;
+    backdrop-filter: blur(16px);
+    color: var(--ctruh-off-black);
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+.primarySM,
+.secondarySM {
+    padding: 12px 14px;
+    font-size: 14px;
+}
+.primaryRegular:hover,
+.primarySM:hover {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #487ffb 0%, #3b6ee0 100%);
+    box-shadow:
+        1px 2px 8px 0px rgba(23, 85, 226, 0.5),
+        0px 0px 4px 0px #a1beff inset;
+}
+.primaryRegular:active,
+.primarySM:active {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #426ecf 0%, #386bdd 100%);
+    box-shadow:
+        2px 2px 4px 0px rgba(4, 23, 66, 0.25) inset,
+        -2px -2px 4px 0px rgba(211, 229, 246, 0.33) inset;
+    opacity: 0.9;
+}
+
+.secondaryRegular:hover,
+.secondarySM:hover {
+    border-radius: 16px;
+    background: #f7fafc;
+    /* Raised */
+    box-shadow:
+        0px 0px 4px 0px rgba(254, 254, 254, 0.1),
+        2px 2px 4px 0px rgba(50, 50, 50, 0.1),
+        -1px -1px 4px 0px rgba(254, 254, 254, 0.05),
+        -2px -2px 6px 0px rgba(252, 252, 252, 0.33);
+    backdrop-filter: blur(8px);
+    color: #3d75f3;
+    text-shadow: 1.600000023841858px 0px 3.200000047683716px rgba(61, 117, 243, 0.33);
+}
+.secondaryRegular:active,
+.secondarySM:active {
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(243, 246, 248, 0.25) 0%, rgba(247, 250, 252, 0.25) 100%);
+    box-shadow:
+        2px 2px 4px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 4px 0px rgba(252, 252, 252, 0.33) inset;
+    backdrop-filter: blur(16px);
+    color: rgba(50, 50, 50, 0.75);
+}
+
+.primarySmSVG {
+    border-radius: 12px;
+    border: 1px solid rgba(247, 250, 252, 0.33);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.primarySmSVG > svg > path {
+    fill: #3d75f3;
+}
+
+.primarySmSVG:active {
+    box-shadow:
+        2px 2px 4px 0px rgba(4, 23, 66, 0.25) inset,
+        -2px -2px 4px 0px rgba(211, 229, 246, 0.33) inset;
+    opacity: 0.5;
+}

@@ -1,0 +1,85 @@
+.buttonContainer,
+.activeButtonContaier {
+    border: 1px solid rgba(247, 250, 252, 0.2);
+    padding: 8px;
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+    pointer-events: all;
+    cursor: pointer;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    border-radius: 12px;
+    background: rgba(247, 250, 252, 0.72);
+    box-shadow:
+        -2px -2px 4px 0px rgba(254, 254, 254, 0.2),
+        2px 2px 2px 0px rgba(34, 34, 34, 0.08),
+        0px 0px 4px 0px rgba(8, 35, 61, 0.05) inset;
+    position: relative;
+    -webkit-transition: all 150ms ease-out;
+    -moz-transition: all 150ms ease-out;
+    -o-transition: all 150ms ease-out;
+    transition: all 150ms ease-out;
+    transition: all ease-out 150ms;
+}
+.activeButtonContaier {
+    border-radius: var(--corner-radii-corner-medium, 12px);
+    border: 1px solid #76a0ff;
+    background: var(--Blue-Gradient, linear-gradient(97deg, #457cf8 0%, #386bdd 100%));
+    box-shadow: 0px 2px 2px 0px rgba(15, 60, 161, 0.2);
+}
+.buttonContainer > p {
+    font-family: Outfit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0em;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:
+        1px 1px 2px 0px #1a2f5c40,
+        1px 1px 1px 0px #a9beee40 inset;
+    display: none;
+    margin-left: 28px;
+}
+
+.default p {
+    color: #3d75f3;
+}
+
+.buttonContainer > svg,
+.activeButtonContaier > svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+}
+.buttonContainer > svg > path {
+    box-shadow:
+        1px 1px 2px 0px #1a2f5c40,
+        1px 1px 1px 0px #a9beee40 inset;
+}
+.buttonContainer:hover p {
+    display: block;
+}
+.buttonContainer:hover {
+    width: fit-content;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow:
+        -2px -2px 4px 0px rgba(255, 255, 255, 0.33),
+        2px 2px 4px 0px rgba(34, 34, 34, 0.15);
+}
+.default:hover svg > path {
+    fill: #3d75f3;
+}
+.activeButtonContaier > svg > path {
+    fill: white;
+}
+.buttonContainer:active {
+    box-shadow:
+        -2px -2px 2px 0px #f0f0f066 inset,
+        2px 2px 2px 0px #32323233 inset;
+    color: #1c51c7;
+    background: rgba(237, 240, 242, 0.33);
+}

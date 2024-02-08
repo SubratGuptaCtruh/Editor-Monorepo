@@ -1,0 +1,51 @@
+.thirdPartyMainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(500px - 78px);
+}
+.innerContainer {
+    width: 60%;
+}
+.innerContainer h1 {
+    color: #323232;
+    text-align: center;
+    /* P */
+    font-family: Outfit;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 1.35rem; /* 125% */
+}
+.imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 5rem;
+}
+.images img {
+    cursor: pointer;
+    width: 8rem;
+    border-radius: 1.5rem;
+    background:
+        url(<path-to-image>),
+        lightgray 50% / cover no-repeat,
+        #fff;
+
+    /* Default Shadow */
+    box-shadow: 0px 2px 8px 0px rgba(17, 17, 17, 0.1);
+}
+.images p {
+    text-align: center;
+    color: #323232;
+    text-align: center;
+    margin-top: 1.5rem;
+    /* P */
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 1.25rem; /* 125% */
+}

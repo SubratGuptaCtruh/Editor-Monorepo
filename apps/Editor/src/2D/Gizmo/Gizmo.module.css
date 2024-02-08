@@ -1,0 +1,40 @@
+.gizmoMainContainer {
+    position: absolute;
+    left: 50%;
+    top: 106px;
+    transform: translateX(-50%);
+    pointer-events: all;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(247, 250, 252, 0.33);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+
+    /* UI Card */
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(24px);
+}
+.gizmoMainContainer > button {
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
+.gizmoMainContainer > button > svg {
+    fill: #323232;
+}
+.gizmoClicked {
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, #457cf8 0%, #386bdd 100%);
+    box-shadow: 0px 2px 2px 0px rgba(15, 60, 161, 0.2);
+}
+.gizmoClicked > svg {
+    fill: #fff !important;
+}

@@ -1,0 +1,118 @@
+.sceneMainContainer {
+    padding: 1rem 0;
+    height: 100%;
+}
+.sceneButtons {
+    display: flex;
+    gap: 1rem;
+}
+.sceneButton,
+.selectedSceneButton {
+    border-radius: 0.75rem;
+    border: 1px solid rgba(247, 250, 252, 0.8);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.33) 0%, rgba(247, 250, 252, 0.33) 100%);
+    box-shadow: 0px 2px 4px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(16px);
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}
+
+.sceneButton:hover {
+    color: #3d75f3;
+}
+
+.selectedSceneButton {
+    background: #3d75f3;
+    color: #fff;
+}
+
+.selectedSceneButton:hover {
+    color: #fff;
+}
+
+.sceneContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    height: 60%;
+    padding: 10px 0;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.scene {
+    position: relative;
+    border-radius: 1rem;
+    background: rgba(247, 250, 252, 0.5);
+    box-shadow:
+        2px 2px 4px 0px rgba(50, 50, 50, 0.1),
+        -2px -2px 4px 0px rgba(252, 252, 252, 0.25);
+}
+.sceneInfo {
+    padding: 0.25rem;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.fav {
+    right: 0;
+    margin: 1rem;
+}
+.sceneImg {
+    width: 100%;
+    height: 230px;
+    object-fit: fill;
+    border-radius: 1rem;
+}
+.scene h1 {
+    overflow: hidden;
+    color: #323232;
+    text-overflow: ellipsis;
+    /* Floating Content */
+    text-shadow: 2px 2px 4px rgba(50, 50, 50, 0.33);
+    font-family: Rubik;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.sceneAuthor {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+}
+.sceneAuthor h1 {
+    overflow: hidden;
+    color: #3d75f3;
+    text-overflow: ellipsis;
+
+    font-family: Outfit;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.sceneAuthor img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+}
+.noAmbienceTemplatesDiv {
+    height: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #323232;
+    text-align: center;
+    line-height: 1.5rem;
+}

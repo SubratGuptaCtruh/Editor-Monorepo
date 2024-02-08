@@ -1,0 +1,104 @@
+[
+    {
+        "id": "a73f9667-761f-4a6e-b13d-bb5dd05b5405",
+        "title": "Into the Woods",
+        "tags": ["Nature"],
+        "hexCodes": ["454839", "606c38", "283618", "fefae0", "dda15e", "bc6c25", "534439"]
+    },
+    {
+        "id": "2",
+        "title": "Campfire at Dusk",
+        "tags": ["Nature", "Soothing"],
+        "hexCodes": ["001219", "005f73", "0a9396", "94d2bd", "e9d8a6", "ee9b00", "ca6702", "bb3e03", "ae2012", "9b2226"]
+    },
+    {
+        "id": "3",
+        "title": "Child's Dream",
+        "tags": ["Soothing", "Minimal"],
+        "hexCodes": ["ad869a", "cdb4db", "ffc8dd", "ffafcc", "bde0fe", "a2d2ff", "d0f5ff"]
+    },
+    {
+        "id": "4",
+        "title": "Moody Sunset",
+        "tags": ["Nature", "Vibrant"],
+        "hexCodes": ["845ec2", "d65db1", "ff6f91", "ff9671", "ffc75f", "f9f871"]
+    },
+    {
+        "id": "5",
+        "title": "Summer Chill",
+        "tags": ["Vibrant"],
+        "hexCodes": ["5ec2b9", "67d1b2", "7edea5", "a1ea94", "caf381", "f9f871", "fe7f2d"]
+    },
+    {
+        "id": "6",
+        "title": "Metallic Fairydust",
+        "tags": ["Fantasy"],
+        "hexCodes": ["5ec2b9", "334b49", "96b1ad", "c2fcf4", "e19ec3", "a96a8d", "e8f3f1"]
+    },
+    {
+        "id": "7",
+        "title": "Earthy Workplace",
+        "tags": ["Professional", "Minimal"],
+        "hexCodes": ["ccd5ae", "e9edc9", "fefae0", "faedcd", "d4a373", "edede9"]
+    },
+    {
+        "id": "8",
+        "title": "Hope",
+        "tags": ["Vibrant"],
+        "hexCodes": ["e63946", "fdf0d5", "f1faee", "a8dadc", "457b9d", "1d3557"]
+    },
+    {
+        "id": "9",
+        "title": "Quiet Accent",
+        "tags": ["Professional", "Minimal"],
+        "hexCodes": ["2d3142", "fffcf2", "ccc5b9", "403d39", "252422", "eb5e28"]
+    },
+    {
+        "id": "10",
+        "title": "Pro Blue",
+        "tags": ["Professional", "Minimal"],
+        "hexCodes": ["0d1b2a", "1b263b", "415a77", "778da9", "e0e1dd", "f7fafc"]
+    },
+    {
+        "id": "11",
+        "title": "Ice Creams",
+        "tags": ["Quirky", "Soothing"],
+        "hexCodes": ["ff99c8", "fcf6bd", "d0f4de", "a9def9", "e4c1f9", "f9f7f3"]
+    },
+    {
+        "id": "12",
+        "title": "Cyberpunk Neon",
+        "tags": ["Sci-Fi", "Vibrant"],
+        "hexCodes": ["ff0054", "7209b7", "480ca8", "4361ee", "4cc9f0", "ffd60a"]
+    },
+    {
+        "id": "13",
+        "title": "Savannah",
+        "tags": ["Nature", "Soothing"],
+        "hexCodes": ["797d62", "9b9b7a", "baa587", "d9ae94", "f1dca7", "ffcb69", "e8ac65", "d08c60", "b58463", "997b66"]
+    },
+    {
+        "id": "14",
+        "title": "Poolside Summer",
+        "tags": ["Vibrant"],
+        "hexCodes": ["2f4858", "33658a", "86bbd8", "f6ae2d", "f26419", "758e4f"]
+    },
+    {
+        "id": "15",
+        "title": "Xylophone",
+        "tags": ["Vibrant", "Quirky"],
+        "hexCodes": ["ff595e", "f46036", "ffca3a", "8ac926", "1982c4", "6a4c93", "ffffff"]
+    },
+    {
+        "id": "16",
+        "title": "Midnight",
+        "tags": ["Soothing"],
+        "hexCodes": ["f1dac4", "a69cac", "474973", "4a4063", "161b33", "0d0c1d"]
+    },
+    {
+        "id": "17",
+        "title": "Faded Rainbow",
+        "tags": ["Soothing"],
+        "hexCodes": ["f94144", "f9844a", "f9c74f", "90be6d", "577590", "9b9fc9", "4d4352"]
+    }
+]

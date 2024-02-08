@@ -1,0 +1,75 @@
+.ambienceMainContainer {
+    padding: 0px 10px;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    color: #323232;
+    justify-content: space-between;
+}
+.rightPart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.rightPartContent {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.rightHeading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: Rubik;
+    font-size: 20px;
+    font-style: normal;
+    gap: 5px;
+    font-weight: 400;
+    align-items: center;
+}
+.contentFirst,
+.content {
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.leftPart {
+    display: flex;
+    width: 11.25rem;
+    height: 11.25rem;
+    padding: 0px 16px;
+    border-radius: 12px;
+    background: rgba(50, 50, 50, 0.02);
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 2px 0px rgba(254, 254, 254, 0.25) inset;
+    justify-content: center;
+    align-items: center;
+    color: #697a8b;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+}
+.mountain {
+    height: 11.25rem;
+    width: 13.25rem;
+    border-radius: 12px;
+}
+.bottomRightButton {
+    position: absolute;
+    bottom: 20px; /* Adjust this value to control the vertical position */
+    right: 20px; /* Adjust this value to control the horizontal position */
+    padding: 10px 20px;
+    background-color: #386bdd;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}

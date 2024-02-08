@@ -1,0 +1,29 @@
+/* search input  */
+.modalSearch {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
+    background: rgba(50, 50, 50, 0.05);
+    /* Recessed - Deep */
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.2) inset,
+        -1px -1px 2px 0px rgba(254, 254, 254, 0.4) inset,
+        1px 1px 2px 0px rgba(50, 50, 50, 0.1) inset,
+        -1px -1px 2px 0px rgba(254, 254, 254, 0.2) inset;
+}
+.modalSearch input {
+    outline: none;
+    border: none;
+    height: 100%;
+    color: #323232;
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 1.125rem;
+    background: rgba(247, 250, 252, 0.05);
+    width: 100%;
+}

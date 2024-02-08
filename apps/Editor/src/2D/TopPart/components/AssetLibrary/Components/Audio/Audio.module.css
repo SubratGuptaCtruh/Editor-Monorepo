@@ -1,0 +1,124 @@
+.clickedButton {
+    background-color: rgba(247, 250, 252, 0.45);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    border: 2px solid #3d75f3;
+    border-radius: 16px;
+    background: #f7fafc;
+    box-shadow: 0px 4px 12px 0px rgba(50, 50, 50, 0.15);
+}
+
+.clickedButton .leftSideText > p:first-child {
+    color: #3d75f3;
+}
+
+.clickedButton .leftSideTextDuration {
+    color: #323232;
+}
+
+.MusicBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 10px;
+    border: 2px solid transparent;
+    border-radius: 16px;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.1);
+    cursor: pointer;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+}
+
+.MusicBox:hover {
+    background: #fff;
+}
+
+.MusicBox:hover .leftSideText > p:first-child {
+    color: #3d75f3;
+}
+
+.MusicBox:active {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(247, 250, 252, 0.45) 100%);
+    /* Recessed - Deep */
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.2) inset,
+        -1px -1px 2px 0px rgba(254, 254, 254, 0.4) inset,
+        1px 1px 2px 0px rgba(50, 50, 50, 0.1) inset,
+        -1px -1px 2px 0px rgba(254, 254, 254, 0.2) inset;
+}
+
+.leftSideCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.musicImage {
+    height: 72px;
+    width: 72px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.musicImage svg {
+    fill: #fff;
+    border-radius: 13px;
+}
+
+.leftSideText {
+    font-family: Rubik;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leftSideText p:first-child {
+    height: 20px;
+    max-width: 130px;
+    align-self: stretch;
+    overflow: hidden;
+    color: #323232;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.leftSideTextDuration {
+    color: #697a8b;
+    /* P */
+    font-family: Outfit;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.rightSideCard {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.rightSideCard > div {
+    height: 24px;
+}
+
+.rightButton {
+    border-radius: var(--corner-radii-corner-small, 8px);
+    border: 1px solid rgba(247, 250, 252, 0.25);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(247, 250, 252, 0.5) 100%);
+    height: 40px;
+    width: 40px;
+    /* UI Card */
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(24px);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+}

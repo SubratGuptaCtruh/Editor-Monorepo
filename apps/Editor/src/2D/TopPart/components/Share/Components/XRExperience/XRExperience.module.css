@@ -1,0 +1,96 @@
+.XRMainContainer {
+    padding: 0.7rem;
+}
+
+.XRTitle h1 {
+    color: #323232;
+
+    /* H6 */
+    font-family: Rubik;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 1.25rem; /* 111.111% */
+}
+.titleInner {
+    display: flex;
+
+    gap: 1rem;
+    margin-top: 0.75rem;
+}
+.titleInner p {
+    overflow: hidden;
+    color: #3d75f3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0.75rem 1rem;
+    /* P */
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 1.25rem; /* 125% */
+
+    border-radius: 0.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+
+    /* Recessed - Shallow */
+    box-shadow:
+        1px 1px 2px 0px rgba(50, 50, 50, 0.15) inset,
+        -2px -2px 2px 0px rgba(254, 254, 254, 0.25) inset;
+}
+.titleInner button {
+    width: 7rem;
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, #457cf8 0%, #386bdd 100%);
+    box-shadow: 0px 2px 2px 0px rgba(15, 60, 161, 0.2);
+    padding: 0.75rem 0.875rem;
+    color: #fff;
+    font-family: Rubik;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 114.286% */
+    text-transform: uppercase;
+}
+
+.qrContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+.qrMain h1 {
+    color: #323232;
+    margin-bottom: 1rem;
+    /* H6 */
+    font-family: Rubik;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 1.25rem; /* 111.111% */
+}
+
+.qrContainer button {
+    border: none;
+    border-radius: 0.75rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+    box-shadow:
+        -2px -2px 4px 0px rgba(254, 254, 254, 0.2),
+        2px 2px 2px 0px rgba(34, 34, 34, 0.08),
+        0px 0px 4px 0px rgba(8, 35, 61, 0.05) inset;
+    backdrop-filter: blur(16px);
+    color: #323232;
+    display: inline;
+    width: 13rem;
+    height: 2.7rem;
+    padding: 0.75rem 0.875rem;
+    font-family: Rubik;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1rem; /* 114.286% */
+    text-transform: uppercase;
+}

@@ -1,0 +1,95 @@
+.modalInnerContainer {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 1rem;
+}
+
+.modalInnerHeader {
+    display: flex;
+    align-items: center;
+    padding: 1.3rem;
+    box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.1);
+}
+
+.modalInnerHeaderTitle {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+.modalInnerHeaderTitle svg {
+    fill: #3d75f3;
+    width: 24px;
+    height: 24px;
+}
+
+.modalInnerHeaderTitle > h1 {
+    color: #323232;
+    font-family: Rubik;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 2rem;
+}
+.uploadInner {
+    padding: 1rem;
+}
+
+.uploadInner > p {
+    color: #323232;
+
+    /* P */
+    font-family: Outfit;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 350;
+    line-height: 1.25rem;
+    /* 125% */
+}
+.buttonContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.KeepButton {
+    display: flex;
+    padding: 12px 14px;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid #76a0ff;
+    background: linear-gradient(97deg, #457cf8 0%, #386bdd 100%);
+    box-shadow: 0px 2px 2px 0px rgba(15, 60, 161, 0.2);
+    cursor: pointer;
+    color: #fff;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    /* 114.286% */
+    text-transform: uppercase;
+}
+.ReplaceButton {
+    display: flex;
+    padding: 12px 14px;
+    align-items: center;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(247, 250, 252, 0.72) 100%);
+    box-shadow:
+        -2px -2px 4px 0px rgba(254, 254, 254, 0.2),
+        2px 2px 2px 0px rgba(34, 34, 34, 0.08),
+        0px 0px 4px 0px rgba(8, 35, 61, 0.05) inset;
+    backdrop-filter: blur(16px);
+    cursor: pointer;
+    color: black;
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    /* 114.286% */
+    text-transform: uppercase;
+}

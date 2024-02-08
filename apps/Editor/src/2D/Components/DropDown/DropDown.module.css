@@ -1,0 +1,134 @@
+.react-dropdown {
+    margin: auto;
+}
+
+/* !display purposes - remove */
+.react-dropdown {
+    position: relative;
+    padding: 8px;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    z-index: 10;
+    color: #323232;
+    border-radius: 8px;
+    border: 1px solid rgba(247, 250, 252, 0.33);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(247, 250, 252, 0.6) 100%);
+    /* Raised */
+    box-shadow:
+        0px 0px 4px 0px rgba(254, 254, 254, 0.1),
+        2px 2px 4px 0px rgba(50, 50, 50, 0.1),
+        -1px -1px 4px 0px rgba(254, 254, 254, 0.05),
+        -2px -2px 6px 0px rgba(252, 252, 252, 0.33);
+    backdrop-filter: blur(8px);
+}
+
+.react-dropdown::after {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    box-sizing: border-box;
+    width: 10px;
+    height: 5px;
+    border-radius: initial;
+    background-color: #323232;
+    top: 50%;
+    right: 0;
+    transform: translate(-90%, -50%);
+    transition: clip-path 330ms ease;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 50% 100%);
+}
+
+.react-dropdown .optList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    /* !important will affect the rest of your CSS despite being in a layer */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-width: 100%;
+    max-height: 20em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0 0 0.4em 0.4em;
+    background: #f0f0f0;
+    transition:
+        transform 330ms ease,
+        opacity 330ms ease;
+    transform: translateY(1px);
+    z-index: 5;
+}
+
+.react-dropdown .optList.hidden {
+    max-height: 0;
+    visibility: hidden;
+}
+
+.react-dropdown .value {
+    display: flex;
+    align-items: center;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.react-dropdown .value svg {
+    width: 20px;
+    height: 20px;
+    fill: #3d75f3;
+    margin-right: 5px;
+}
+
+.react-dropdown .option {
+    padding: 10px 5px;
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    opacity: 0;
+    animation-delay: calc(40ms * var(--index)) !important;
+}
+
+.react-dropdown.active::after {
+    clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+}
+
+.react-dropdown.active .option {
+    animation: drop 220ms ease forwards;
+}
+
+.react-dropdown .option.highlight {
+    background-color: #3d75f3;
+    color: white;
+    font-weight: 500;
+}
+
+.react-dropdown select {
+    visibility: hidden;
+    max-height: 0;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes drop {
+    from {
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

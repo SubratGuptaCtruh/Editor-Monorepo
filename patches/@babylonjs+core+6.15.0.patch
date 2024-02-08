@@ -1,0 +1,113 @@
+diff --git a/node_modules/@babylonjs/core/Loading/Plugins/babylonFileLoader.js b/node_modules/@babylonjs/core/Loading/Plugins/babylonFileLoader.js
+index 2da8871..d3c4e26 100644
+--- a/node_modules/@babylonjs/core/Loading/Plugins/babylonFileLoader.js
++++ b/node_modules/@babylonjs/core/Loading/Plugins/babylonFileLoader.js
+@@ -138,7 +138,7 @@ const loadAssetContainer = (scene, data, rootUrl, onError, addToScene = false) =
+     let log = "importScene has failed JSON parse";
+     try {
+         // eslint-disable-next-line no-var
+-        var parsedData = JSON.parse(data);
++        var parsedData = typeof data === "object" ? data : JSON.parse(data);
+         log = "";
+         const fullDetails = SceneLoader.loggingLevel === SceneLoader.DETAILED_LOGGING;
+         let index;
+@@ -817,7 +817,7 @@ SceneLoader.RegisterPlugin({
+         let log = "importScene has failed JSON parse";
+         try {
+             // eslint-disable-next-line no-var
+-            var parsedData = JSON.parse(data);
++            var parsedData = typeof data === "object" ? data : JSON.parse(data);
+             log = "";
+             // Scene
+             if (parsedData.useDelayedTextureLoading !== undefined && parsedData.useDelayedTextureLoading !== null) {
+diff --git a/node_modules/@babylonjs/core/Loading/sceneLoader.js b/node_modules/@babylonjs/core/Loading/sceneLoader.js
+index 50af145..5e5005a 100644
+--- a/node_modules/@babylonjs/core/Loading/sceneLoader.js
++++ b/node_modules/@babylonjs/core/Loading/sceneLoader.js
+@@ -8,6 +8,7 @@ import { Logger } from "../Misc/logger.js";
+ import { SceneLoaderFlags } from "./sceneLoaderFlags.js";
+ import { IsBase64DataUrl } from "../Misc/fileTools.js";
+ import { RuntimeError, ErrorCodes } from "../Misc/error.js";
++
+ /**
+  * Mode that determines how to handle old animation groups before loading new ones.
+  */
+@@ -149,6 +150,7 @@ export class SceneLoader {
+         if (!plugin) {
+             throw "The loader plugin corresponding to the file type you are trying to load has not been found. If using es6, please import the plugin you wish to use before.";
+         }
++
+         SceneLoader.OnPluginActivatedObservable.notifyObservers(plugin);
+         // Check if we have a direct load url. If the plugin is registered to handle
+         // it or it's not a base64 data url, then pass it through the direct load path.
+@@ -235,6 +237,7 @@ export class SceneLoader {
+         let name;
+         let file = null;
+         let rawData = null;
++        let rawObject = null
+         if (!sceneFilename) {
+             url = rootUrl;
+             name = Tools.GetFilename(rootUrl);
+@@ -251,11 +254,14 @@ export class SceneLoader {
+             name = "arrayBuffer";
+             rawData = sceneFilename;
+         }
+-        else if (typeof sceneFilename === "string" && sceneFilename.startsWith("data:")) {
++        else if (typeof sceneFilename === "string" && (sceneFilename.startsWith("data:"))) {
+             url = sceneFilename;
+             name = "";
+-        }
+-        else {
++        }else if(typeof sceneFilename === "object") {
++            url = "";
++            name = "";
++            rawObject = sceneFilename;
++        }else {
+             const filename = sceneFilename;
+             if (filename.substr(0, 1) === "/") {
+                 Tools.Error("Wrong sceneFilename parameter");
+@@ -270,6 +276,7 @@ export class SceneLoader {
+             name: name,
+             file: file,
+             rawData,
++            rawObject
+         };
+     }
+     // Public functions
+@@ -474,11 +481,13 @@ export class SceneLoader {
+      * @returns The loaded plugin
+      */
+     static Append(rootUrl, sceneFilename = "", scene = EngineStore.LastCreatedScene, onSuccess = null, onProgress = null, onError = null, pluginExtension = null, name = "") {
++
+         if (!scene) {
+             Logger.Error("No scene available to append to");
+             return null;
+         }
+         const fileInfo = SceneLoader._GetFileInfo(rootUrl, sceneFilename);
++
+         if (!fileInfo) {
+             return null;
+         }
+@@ -530,7 +539,8 @@ export class SceneLoader {
+         return SceneLoader._LoadData(fileInfo, scene, (plugin, data) => {
+             if (plugin.load) {
+                 const syncedPlugin = plugin;
+-                if (!syncedPlugin.load(scene, data, fileInfo.rootUrl, errorHandler)) {
++                const isRawObject = fileInfo.rawObject ? true : false;
++                if (!syncedPlugin.load(scene, isRawObject ? fileInfo.rawObject : data, fileInfo.rootUrl, errorHandler)) {
+                     return;
+                 }
+                 scene.loadingPluginName = plugin.name;
+diff --git a/node_modules/@babylonjs/core/Materials/Textures/texture.js b/node_modules/@babylonjs/core/Materials/Textures/texture.js
+index 8fb959b..17e4e19 100644
+--- a/node_modules/@babylonjs/core/Materials/Textures/texture.js
++++ b/node_modules/@babylonjs/core/Materials/Textures/texture.js
+@@ -716,7 +716,7 @@ export class Texture extends BaseTexture {
+                         },
+                         internalTexture,
+                     };
+-                    texture = new Texture(url, scene, options);
++                    texture = new Texture(url.replace('data:',""), scene, options);
+                 }
+                 return texture;
+             }

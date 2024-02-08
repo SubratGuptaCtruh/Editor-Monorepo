@@ -1,0 +1,74 @@
+.leftPartEditHeader {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.67);
+}
+
+.leftPartEditHeader svg {
+    width: 24px;
+    height: 24px;
+    fill: #323232;
+    cursor: pointer;
+}
+.deleteIcon svg {
+    fill: #e74646;
+}
+
+.LeftPartEditLayer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.LeftPartEditLayer::-webkit-scrollbar {
+    display: none;
+}
+
+.LeftPartEditLayerOptions {
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+}
+
+.LeftPartEditLayerOptions:hover,
+.LeftPartEditLayerOptions:hover svg,
+.LeftPartEditLayerOptions:hover h6 {
+    background: linear-gradient(135deg, #457cf8 0%, #386bdd 100%);
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    fill: #fff;
+}
+.LeftPartEditLayerOptions > svg {
+    fill: #323232;
+    margin-left: auto;
+}
+.LeftPartEditLayerOptions > input {
+    width: 20px;
+    height: 20px;
+}
+.LeftPartEditLayerOptions h6 {
+    font-family: "Rubik", sans-serif;
+    margin-top: 3px;
+    margin-left: 3px;
+    color: #323232;
+    flex-grow: 1;
+}
+
+.container {
+    height: 400px;
+    width: 250px;
+}
+.native_container {
+    overflow: auto;
+}
+
+.itemDetails {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
